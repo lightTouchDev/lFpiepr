@@ -38,7 +38,7 @@ def flipper(word):
     x = word[1::2]
 
     r = ''
-    for i , a in zip_longest(x,w):
+    for i,a in zip_longest(x,w):
         if i != None:
             r += i
             r += a
@@ -47,6 +47,6 @@ def flipper(word):
     
     print(r)
 
-flipper(input('World to flip: '))
+flipper(input('Word to flip: '))
 
 
