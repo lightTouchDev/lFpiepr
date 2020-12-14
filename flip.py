@@ -3,6 +3,24 @@
 # Write a program that reverses every other letter of a given string
 # Ex. Hello -> eHllo | World -> oWlrd
 
+from itertools import zip_longest
+
+def flipper(word):
+    w = word[::2]
+    x = word[1::2]
+
+    r = ''
+    for i,a in zip_longest(x,w):
+        if i != None:
+            r += i
+            r += a
+        else:
+            r += a
+    
+    print(r)
+
+flipper(input('Word to flip: '))
+
 # only works for words with 5+ letters
 # def flip(word):
 #     l = [word[i] for i in range(1,len(word),2)]
@@ -31,22 +49,3 @@
 #     print(r)
 
 # flipper('world')
-from itertools import zip_longest
-
-def flipper(word):
-    w = word[::2]
-    x = word[1::2]
-
-    r = ''
-    for i,a in zip_longest(x,w):
-        if i != None:
-            r += i
-            r += a
-        else:
-            r += a
-    
-    print(r)
-
-flipper(input('Word to flip: '))
-
-
