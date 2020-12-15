@@ -5,21 +5,38 @@
 
 from itertools import zip_longest
 
+## With import
 def flipper(word):
     w = word[::2]
     x = word[1::2]
 
     r = ''
-    for i,a in zip_longest(x,w):
-        if i != None:
-            r += i
-            r += a
-        else:
-            r += a
-    
+    for i,a in zip_longest(x,w, fillvalue=''):
+        r += i
+        r += a
+
     print(r)
 
 flipper(input('Word to flip: '))
+
+## w/out import
+def flip(word):
+    l = list(word)
+
+    r = ''
+    for i in range(1,len(l), 2):
+        r += l[i]
+        r += l[i - 1]
+
+    if len(word) % 2 != 0:
+        r += word[ -1 ]
+    
+    print(r)
+
+flip('Hello')
+
+#---------------------------------
+## Failed attempts
 
 # only works for words with 5+ letters
 # def flip(word):
