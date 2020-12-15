@@ -17,16 +17,15 @@ def flipper(word):
 
     print(r)
 
-flipper(input('Word to flip: '))
+flipper('Hello')
 
 ## w/out import
 def flip(word):
-    l = list(word)
 
     r = ''
-    for i in range(1,len(l), 2):
-        r += l[i]
-        r += l[i - 1]
+    for i in range(1,len(word), 2):
+        r += word[i]
+        r += word[i - 1]
 
     if len(word) % 2 != 0:
         r += word[ -1 ]
